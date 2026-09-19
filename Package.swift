@@ -1,7 +1,6 @@
 // swift-tools-version:5.9
-// Release manifest draft for the separate binary-only SwiftPM repository.
-// Keep this source repository private. Copy to the distribution repository's
-// Package.swift after verifying the exact signed ZIP and checksum.
+// Binary-only release manifest for AttriloopSDK 0.2.1.
+// The signed ZIP at the release URL must match this checksum exactly.
 import PackageDescription
 
 let package = Package(

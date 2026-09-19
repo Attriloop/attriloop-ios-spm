@@ -6,7 +6,15 @@ repository is private.
 
 The `0.2.1` binary release is being prepared. The package manifest references
 the upcoming GitHub release asset; the package will become installable once the
-signed ZIP is uploaded with the checksum declared in `Package.swift`.
+signed ZIP is uploaded with the checksum declared in `Package.swift` and this
+repository is public.
+
+Before publication, run
+`scripts/verify-release.sh /path/to/AttriloopSDK.xcframework.zip` on a Mac.
+It checks the checksum, privacy manifest, and code signature. Upload those
+exact bytes to the `v0.2.1` release while this repository is still private,
+then make this binary-only repository public. Keep the SDK source repository
+private.
 
 After publication, add this package in Xcode with:
 
