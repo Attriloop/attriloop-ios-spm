@@ -4,10 +4,8 @@ This repository distributes the signed Attriloop iOS XCFramework. The Swift
 package product is `AttriloopSDK` and supports iOS 13 or later. The source
 repository is private.
 
-The `0.2.1` binary release is being prepared. The package manifest references
-the upcoming GitHub release asset; the package will become installable once the
-signed ZIP is uploaded with the checksum declared in `Package.swift` and this
-repository is public.
+The `0.2.1` release distributes the signed XCFramework as a GitHub Release
+asset, pinned by the checksum in `Package.swift`.
 
 Before publication, run
 `scripts/verify-release.sh /path/to/AttriloopSDK.xcframework.zip` on a Mac.
@@ -16,7 +14,7 @@ exact bytes to the `v0.2.1` release while this repository is still private,
 then make this binary-only repository public. Keep the SDK source repository
 private.
 
-After publication, add this package in Xcode with:
+Add this package in Xcode with:
 
 ```text
 https://github.com/Attriloop/attriloop-ios-spm.git
