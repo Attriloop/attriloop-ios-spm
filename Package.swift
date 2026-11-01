@@ -1,5 +1,5 @@
 // swift-tools-version:5.9
-// Binary-only release manifest for AttriloopSDK 0.2.1.
+// Binary-only release manifest for AttriloopSDK 0.3.0.
 // The signed ZIP at the release URL must match this checksum exactly.
 import PackageDescription
 
@@ -12,8 +12,8 @@ let package = Package(
   targets: [
     .binaryTarget(
       name: "AttriloopSDK",
-      url: "https://github.com/Attriloop/attriloop-ios-spm/releases/download/v0.2.1/AttriloopSDK.xcframework.zip",
-      checksum: "1b6622de8470f5a1530df461a517b06738a4e161a1b7022a6cc33e877012beec"
+      url: "https://github.com/Attriloop/attriloop-ios-spm/releases/download/v0.3.0/AttriloopSDK.xcframework.zip",
+      checksum: "14ac1a8641bd36359b029228d548c0864c486b81ed9a7f8351661f9be6c0b64d"
     )
   ]
 )
