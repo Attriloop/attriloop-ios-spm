@@ -13,7 +13,7 @@ let package = Package(
     .binaryTarget(
       name: "AttriloopSDK",
       url: "https://github.com/Attriloop/attriloop-ios-spm/releases/download/v0.3.0/AttriloopSDK.xcframework.zip",
-      checksum: "ae950364ff066dd42ab68c75d2cb31668f98c6c8d2581ed339a22863a35492b7"
+      checksum: "6338c84a91bc94c5305f00cd3bb5a8060d3672fe7d4f3ee6f0512add6c2ca7ca"
     ),
     // Privacy manifest as a resource bundle: SwiftPM does not copy resources out of
     // the static binary target (see Sources/AttriloopSDKPrivacy).
