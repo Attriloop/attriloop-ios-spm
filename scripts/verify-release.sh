@@ -32,5 +32,17 @@ if ! find "$XCFRAMEWORK" -name PrivacyInfo.xcprivacy -print -quit | grep -q .; t
   echo "XCFramework is missing PrivacyInfo.xcprivacy" >&2
   exit 1
 fi
+# The resource-bundle copy (Sources/AttriloopSDKPrivacy) must equal every slice's manifest.
+PRIVACY_COPY="$ROOT/Sources/AttriloopSDKPrivacy/PrivacyInfo.xcprivacy"
+if [[ ! -f "$PRIVACY_COPY" ]]; then
+  echo "Missing $PRIVACY_COPY (privacy manifest resource bundle)" >&2
+  exit 1
+fi
+while IFS= read -r manifest; do
+  if ! cmp -s "$manifest" "$PRIVACY_COPY"; then
+    echo "Privacy manifest drift: ${manifest#"$STAGING"/} differs from Sources/AttriloopSDKPrivacy/PrivacyInfo.xcprivacy" >&2
+    exit 1
+  fi
+done < <(find "$XCFRAMEWORK" -name PrivacyInfo.xcprivacy)
 codesign --verify --strict "$XCFRAMEWORK"
-echo "Verified checksum, privacy manifest, and XCFramework signature: $ACTUAL"
+echo "Verified checksum, privacy manifest (binary and resource bundle), and XCFramework signature: $ACTUAL"
